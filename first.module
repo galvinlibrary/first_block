@@ -16,3 +16,6 @@ function first_block_view($delta = '') {
   ));
   return $block;
 }
+
+// http://www.wdtutorials.com/drupal-7/drupal-7-how-to-create-module-part-1#.VV47xvlVhBc
+// https://ezproxy.gl.iit.edu/login?url=http://dx.doi.org/10.1007/978-1-4302-2839-4
