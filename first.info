@@ -1,0 +1,6 @@
+name = First
+description = Display user name and IP address
+package = Pro Drupal Development
+core = 7.x
+version = VERSION
+files[] = first.module

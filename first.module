@@ -1,0 +1,18 @@
+<?php
+/**
+ * Implements hook_block_info.
+ */
+function first_block_info() {
+  $blocks['first'] = array('info' => t('First block'));
+  return $blocks;
+}
+
+function first_block_view($delta = '') {
+  global $user;
+  $account = $user;
+  $block['content'] = t('Hello @user from IP @host',array(
+    '@user' => format_username($user), 
+    '@host' => $account->hostname
+  ));
+  return $block;
+}
