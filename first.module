@@ -3,16 +3,29 @@
  * Implements hook_block_info.
  */
 function first_block_info() {
-  $blocks['first'] = array('info' => t('First block'));
+  $blocks['first'] = array(
+    'info' => t('First block'),
+    'cache' => DRUPAL_NO_CACHE
+  );
   return $blocks;
 }
+
+function test_msg($isOpen){
+  if ($isOpen<=0){
+    $openMsg="CLOSED";   
+  }          
+  else {
+    $openMsg="OPEN";
+  }
+  return $openMsg;
+}
+
 
 function first_block_view($delta = '') {
   global $user;
   $account = $user;
-  $block['content'] = t('Hello @user from IP @host',array(
-    '@user' => format_username($user), 
-    '@host' => $account->hostname
+  $block['content'] = t('The library is @test',array(
+    '@test' => test_msg(1)
   ));
   return $block;
 }
